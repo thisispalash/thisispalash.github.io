@@ -4,12 +4,38 @@
 entries:
   - title: about
     entries:
-      - title: developer. dreaming of the big things, failing at the little things.
+      - title: dreaming of the big things, failing at the little things.
       - title: links
         entries:
           - title: GitHub
             url: https://github.com/thisispalash
-          - title: Twitter
-            url: https://www.twitter.com/isthispalash
           - title: Instagram
             url: https://www.instagram.com/isthispalash
+          - title: Twitter
+            url: https://www.twitter.com/isthispalash
+
+  - title: developer work
+    entries:
+      - title: bounties
+        post_list: true
+        category: bounty
+        limit: 5
+        show_more: true
+        show_more_url: bounties.xml
+        show_more_text: ">5"
+
+      - title: projects
+        post_list: true
+        category: project
+        limit: 5
+        show_more: true
+        show_more_url: projects.xml
+        show_more_text: "fascinating.."
+
+      - title: maybe..
+        post_list: true
+        category: todo
+        limit: 5
+        show_more: true
+        show_more_url: maybe.xml
+        show_more_text: "anything else?"
