@@ -68,3 +68,29 @@ entries:
         show_more: true
         show_more_url: bedside-blackboard.html
         show_more_text: "crazy talk"
+
+  - title: writings
+    entries:
+      - title: poetry
+        post_list: true
+        category: poem
+        limit: 5
+        show_more: true
+        show_more_url: poetry.html
+        show_more_text: "much amaze"
+
+      - title: fiction
+        post_list: true
+        category: prose
+        limit: 5
+        show_more: true
+        show_more_url: prose.html
+        show_more_text: "i'm hooked"
+
+      - title: musings
+        post_list: true
+        category: b3
+        limit: 5
+        show_more: true
+        show_more_url: bedside-blackboard.html
+        show_more_text: "crazy talk"
