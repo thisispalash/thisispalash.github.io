@@ -45,6 +45,7 @@ entries:
 
   - title: writings
     entries:
+      - title: sometimes i pretend i know stuff
       - title: poetry
         post_list: true
         category: poem
@@ -69,28 +70,29 @@ entries:
         show_more_url: bedside-blackboard.html
         show_more_text: "crazy talk"
 
-  - title: writings
+  - title: media
     entries:
-      - title: poetry
+      - title: sometimes words just aren't enough
+      - title: photography
         post_list: true
-        category: poem
-        limit: 5
+        category: pics
+        limit: 15
         show_more: true
-        show_more_url: poetry.html
-        show_more_text: "much amaze"
+        show_more_url: photo.php
+        show_more_text: "such wow"
 
-      - title: fiction
+      - title: filmography
         post_list: true
-        category: prose
+        category: vids
         limit: 5
         show_more: true
-        show_more_url: prose.html
-        show_more_text: "i'm hooked"
+        show_more_url: video.php
+        show_more_text: "very excite"
 
-      - title: musings
+      - title: music
         post_list: true
-        category: b3
+        category: song
         limit: 5
         show_more: true
-        show_more_url: bedside-blackboard.html
-        show_more_text: "crazy talk"
+        show_more_url: sound.php
+        show_more_text: "omg why"
