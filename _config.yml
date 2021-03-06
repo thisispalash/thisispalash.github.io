@@ -10,7 +10,7 @@ remote_theme: riggraz/no-style-please
 theme_config:
   appearance: "dark"
   back_home_text: "home"
-  date_format: "%y-%m-%d [%H:%M] | %F" # 21-03-05 [20:33] | EST
+  date_format: "%y-%m-%d" # 21-03-05 [20:33] | EST
   show_description: true
 
 plugins:
