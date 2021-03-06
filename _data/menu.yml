@@ -68,30 +68,3 @@ entries:
         show_more: true
         show_more_url: bedside-blackboard.html
         show_more_text: "crazy talk"
-
-
-    - title: media
-      entries:
-      - title: photography
-        post_list: true
-        category: pics
-        limit: 15
-        show_more: true
-        show_more_url: photo.php
-        show_more_text: "such wow"
-
-      - title: filmography
-        post_list: true
-        category: vids
-        limit: 5
-        show_more: true
-        show_more_url: video.html
-        show_more_text: "very excite"
-
-      - title: music
-        post_list: true
-        category: song
-        limit: 5
-        show_more: true
-        show_more_url: sound.html
-        show_more_text: "omg why"
