@@ -5,10 +5,11 @@ entries:
   - title: about
     entries:
       - title: developer. dreaming of the big things, failing at the little things.
-      - title: "social :: 
-        <a href="https://github.com/thisispalash">GitHub</>
-        <a href='https://www.twitter.com/isthispalash'>Twitter</a>
-        <a href='https://www.instagram.com/isthispalash'>Twitter</a>"
+      - title: links
+        entries:
+          - title: "<a href="https://github.com/thisispalash">GitHub</>"
+          - title: "<a href='https://www.twitter.com/isthispalash'>Twitter</a>"
+          - title: "<a href='https://www.instagram.com/isthispalash'>Twitter</a>"
 
   - title: developer work
     entries:
