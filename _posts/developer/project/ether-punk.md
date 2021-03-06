@@ -1,6 +1,6 @@
 ---
 layout: post
-category: project
+which_category: project
 tags: [hackathon, ios, blockchain]
 
 title: Dash Monke [@etherPunk]

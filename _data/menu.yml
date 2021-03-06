@@ -18,14 +18,6 @@ entries:
   - title: developer work
     entries:
       - title: some of my projects that i've done / been a part of
-      - title: bounties
-        post_list: true
-        category: bounty
-        limit: 5
-        show_more: true
-        show_more_url: bounties.xml
-        show_more_text: ">5"
-
       - title: projects
         post_list: true
         category: project
@@ -33,6 +25,14 @@ entries:
         show_more: true
         show_more_url: projects.xml
         show_more_text: "fascinating.."
+
+      - title: bounties
+        post_list: true
+        category: bounty
+        limit: 5
+        show_more: true
+        show_more_url: bounties.xml
+        show_more_text: "$$$"
 
       - title: maybe..
         post_list: true
