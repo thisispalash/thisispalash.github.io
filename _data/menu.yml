@@ -7,9 +7,12 @@ entries:
       - title: developer. dreaming of the big things, failing at the little things.
       - title: links
         entries:
-          - title: "<a href="https://github.com/thisispalash">GitHub</>"
-          - title: "<a href='https://www.twitter.com/isthispalash'>Twitter</a>"
-          - title: "<a href='https://www.instagram.com/isthispalash'>Twitter</a>"
+          - title: GitHub
+            url: https://github.com/thisispalash
+          - title: Twitter
+            url: https://www.twitter.com/isthispalash
+          - title: Instagram
+            url: https://www.instagram.com/isthispalash
 
   - title: developer work
     entries:
