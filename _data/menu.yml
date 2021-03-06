@@ -14,8 +14,10 @@ entries:
           - title: Twitter
             url: https://www.twitter.com/isthispalash
 
+
   - title: developer work
     entries:
+      - title: some of my projects that i've done / been a part of
       - title: bounties
         post_list: true
         category: bounty
@@ -39,3 +41,30 @@ entries:
         show_more: true
         show_more_url: maybe.xml
         show_more_text: "anything else?"
+
+
+  - title: writings
+    entries:
+      - title: poetry
+        post_list: true
+        category: poem
+        limit: 5
+        show_more: true
+        show_more_url: poetry.html
+        show_more_text: "much amaze"
+
+      - title: fiction
+        post_list: true
+        category: prose
+        limit: 5
+        show_more: true
+        show_more_url: prose.html
+        show_more_text: "i'm hooked"
+
+      - title: musings
+        post_list: true
+        category: b3
+        limit: 5
+        show_more: true
+        show_more_url: bedside-blackboard.html
+        show_more_text: "crazy talk"
