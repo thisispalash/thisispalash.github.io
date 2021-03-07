@@ -4,7 +4,7 @@
 entries:
   - title: about
     entries:
-      - title: "developer. read more <a href="#home-text">below</a>"
+      - title: "developer. read more <a href='#home-text'>below</a>"
       - title: links
         entries:
           - title: GitHub
