@@ -7,7 +7,7 @@ title: Lumpsum Delivery [@Bennett-University]
 tags: [class-project, entrepreneurship]
 
 date: 2021-03-31 06:30:00 -0500 # TODO
-published: false
+published: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar eu quam a cursus. Phasellus nec nulla tortor. Cras quis ligula suscipit, cursus eros sit amet, consectetur diam. Donec efficitur arcu sit amet massa volutpat blandit. Aenean vitae erat nunc. Maecenas pulvinar libero arcu, cursus dictum arcu malesuada eu. Etiam pretium, velit non porttitor pretium, dui sem congue dolor, non lobortis ipsum lorem eget magna. Pellentesque fringilla ultricies justo, eu semper erat iaculis sit amet. Praesent ut eleifend neque. Suspendisse non maximus sapien. Ut libero sem, tristique sed elit sit amet, vestibulum pretium magna. Phasellus erat velit, egestas et est at, porttitor consectetur mi. Vestibulum interdum arcu augue, id finibus lectus laoreet et. Quisque semper ipsum eu velit pellentesque, eget tristique urna congue. Vivamus interdum tellus vel leo posuere, sit amet tempus nulla suscipit. Praesent ac est imperdiet, tempus turpis eget, posuere felis.
