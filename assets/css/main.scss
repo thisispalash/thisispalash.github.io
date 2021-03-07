@@ -3,6 +3,7 @@
 
 @import "no-style-please";
 
-body {
-  text-align: justify;
-}
+p { text-align: justify; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
