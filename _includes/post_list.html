@@ -10,6 +10,8 @@
   {%-assign limit_exceeded = false-%}
 {%-endif-%}
 
+<h1> {{ posts }} </h1>
+
 {%- if posts.size > 0 -%}
   <ul>
     {%- for post in posts limit: include.limit -%}
