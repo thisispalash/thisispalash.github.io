@@ -1,7 +1,7 @@
 ---
 layout: post
 
-category: project
+# category: project
 slug: lumpsum-delivery
 title: Lumpsum Delivery [@Bennett-University]
 tags: [class-project, entrepreneurship]
