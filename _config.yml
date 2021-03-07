@@ -4,6 +4,7 @@ url: https://thisispalash.com
 description: >
   dreaming of the big things, failing at the little things.
 permalink: /:slug.eth
+goat_counter: "isthispalash"
 
 favicon: "memoji.png"
 remote_theme: riggraz/no-style-please
