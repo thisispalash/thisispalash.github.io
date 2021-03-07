@@ -6,6 +6,14 @@ layout: default
 
 <article>
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    p {
+      text-align: justify;
+    }
+    p.post-meta {
+      text-align: right;
+    }
+  </style>
   <p class="post-meta">
     <time datetime="{{ page.date }}">
       {{ page.date | date: site.theme_config.date_format }}
