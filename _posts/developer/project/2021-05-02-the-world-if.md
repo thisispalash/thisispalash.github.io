@@ -6,7 +6,7 @@ slug: the-world-if-crypto
 title: The world if .. [@chain-link]
 tags: [hackathon, blockchain, future]
 
-date: # TODO
+date: 2021-03-06 06:30:00 -0500 # TODO
 published: false
 ---
 

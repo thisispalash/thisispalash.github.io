@@ -6,7 +6,7 @@ slug: welcome-to-my-mind
 title: \'Tis but a tool
 tags: []
 
-date: # TODO
+date: 2021-03-06 06:30:00 -0500 # TODO
 published: true
 ---
 

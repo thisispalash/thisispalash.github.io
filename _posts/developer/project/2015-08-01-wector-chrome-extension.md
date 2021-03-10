@@ -6,7 +6,7 @@ slug: wector-chrome-extension
 title: Wector Chrome Extension
 tags: [chrome, ]
 
-date: # TODO
+date: 2021-03-06 06:30:00 -0500 # TODO
 published: false
 ---
 

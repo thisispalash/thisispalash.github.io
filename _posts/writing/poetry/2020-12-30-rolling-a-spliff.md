@@ -6,7 +6,7 @@ slug: rolling-a-spliff
 title: Rolling A Spliff
 tags: []
 
-date: # TODO
+date: 2021-03-06 06:30:00 -0500 # TODO
 published: true
 ---
 
