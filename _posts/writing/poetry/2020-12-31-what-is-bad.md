@@ -6,10 +6,11 @@ slug: welcome-to-my-mind
 title: \'Tis but a tool
 tags: []
 
-date: 2021-03-06 06:30:00 -0500 # TODO
+date: 2020-12-31 21:30:00 -0600
 published: true
 ---
 
+<pre>
 What makes something bad?
 The goal? The outcome?
 Or all the choices made along the way?
@@ -75,12 +76,16 @@ a way to sedate ourselves though our unending march to our death.
 The musings, nails that chip away from the rock face as we stare down into the abyss
 all the while, the light cooking us away,
 into the dark.
+</pre>
 
 ---
 
 {: data-content="versions"}
 
+
 ### original
+
+<pre>
 What makes something bad?
 Is it the goal? Or the outcome?
 Or perhaps all the choices made along the way?
@@ -147,3 +152,4 @@ Or maybe, musings on the good or the bad are the nails
 Chipping away from the rock face as we stare down into the abyss
 While the light cooks us away into the dark.
 What then, makes something bad?!
+</pre>
