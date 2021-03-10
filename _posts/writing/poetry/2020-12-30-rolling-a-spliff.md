@@ -9,7 +9,7 @@ tags: []
 date: 2021-03-06 06:30:00 -0500 # TODO
 published: true
 ---
-
+<pre>
 Emeralds and jade withdrawn from the clear jewel box
 Hidden away, to shelter the bright green, sometimes subdued 
 and sometimes with streaks of regal purple or flaming orange, 
@@ -58,13 +58,14 @@ Until only the gum is visible, for which the tongue is compelled
 and in one decisive motion, it wets the adhesive,
 prompting the right to perform the final checks on his thesis
 before sealing shut, quite remarkable, his treatise.
-
+</pre>
 ---
 
 {: data-content="versions"}
 
 ### original
 
+<pre>
 Emeralds and jade withdrawn from the clear jewel box
 Hidden away to shelter the bright green, sometimes subdued
 with rare streaks of purple or orange on the jewels, which do exude
@@ -112,3 +113,4 @@ Until only the glue is visible, for which the tongue is compelled
 Which in one decisive motion, wets the adhesive,
 Prompting the right to perform the final checks on his thesis
 Before sealing shut his quite remarkable treatise.
+</pre>
