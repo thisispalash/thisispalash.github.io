@@ -3,7 +3,7 @@ layout: post
 
 category: poem
 slug: welcome-to-my-mind
-title: \'Tis but a tool
+title: &#39;Tis but a tool
 tags: []
 
 date: 2020-12-31 21:30:00 -0600
