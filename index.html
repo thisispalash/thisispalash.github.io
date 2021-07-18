@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- This website/webapp was created in Softr. https://www.softr.io -->
+<!-- Last Published: Sun, July 18 2021 00:13:13 -->
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <title>thisispalash [dot] com</title>
+
+
+
+
+
+  <link rel="icon" type="image/x-icon" href>
+
+
+
+  <link href="css/montserrat.css" rel="stylesheet">
+  <link href="css/comfortaa.css" rel="stylesheet">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.css" rel="stylesheet">
+  <link href="css/softr.css" rel="stylesheet">
+
+  <style>
+    html { height: 100vh }
+    body {
+      min-height: 100vh;
+      background-color: #000000;
+      padding-top: 5%;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+
+
+    .sw-text-color-alt[data-element='button'] {
+      color: #82ceaf;
+    }
+
+    .sw-background-color-alt[data-element='button'] {
+      background-color: #222222;
+    }
+
+
+    .sw-border-top-color-82ceaf {
+      border-top-color: #82ceaf !important;
+    }
+
+    footer {
+      position: sticky;
+      bottom: 0;
+      width: 100vw;
+    }
+
+    .sw-padding-top-1xl {
+      padding-bottom: 3rem !important;
+    }
+
+    .sw-padding-bottom-1xl {
+      padding-bottom: 3rem !important;
+    }
+
+  </style>
+  
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+
+
+  <!-- Font Sizing -->
+  <style>
+    .sw-font-size-5xl {
+      font-size: 3rem;
+    }
+
+    .sw-font-size-4xl {
+      font-size: 2.25rem;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if ($(window).width() < 768) {
+        $('h1.sw-font-size-10xl').removeClass('sw-font-size-10xl').addClass('sw-font-size-5xl');
+        $('h1.sw-font-size-9xl').removeClass('sw-font-size-9xl').addClass('sw-font-size-5xl');
+        $('h1.sw-font-size-8xl').removeClass('sw-font-size-8xl').addClass('sw-font-size-5xl');
+        $('h1.sw-font-size-7xl').removeClass('sw-font-size-7xl').addClass('sw-font-size-5xl');
+        $('h1.sw-font-size-6xl').removeClass('sw-font-size-6xl').addClass('sw-font-size-4xl');
+        $('h2.sw-font-size-10xl').removeClass('sw-font-size-10xl').addClass('sw-font-size-5xl');
+        $('h2.sw-font-size-9xl').removeClass('sw-font-size-9xl').addClass('sw-font-size-5xl');
+        $('h2.sw-font-size-8xl').removeClass('sw-font-size-8xl').addClass('sw-font-size-5xl');
+        $('h2.sw-font-size-7xl').removeClass('sw-font-size-7xl').addClass('sw-font-size-5xl');
+        $('h2.sw-font-size-6xl').removeClass('sw-font-size-6xl').addClass('sw-font-size-4xl');
+        $('div.sw-font-size-10xl').removeClass('sw-font-size-10xl').addClass('sw-font-size-5xl');
+        $('div.sw-font-size-9xl').removeClass('sw-font-size-9xl').addClass('sw-font-size-5xl');
+        $('div.sw-font-size-8xl').removeClass('sw-font-size-8xl').addClass('sw-font-size-5xl');
+        $('div.sw-font-size-7xl').removeClass('sw-font-size-7xl').addClass('sw-font-size-5xl');
+        $('div.sw-font-size-6xl').removeClass('sw-font-size-6xl').addClass('sw-font-size-4xl');
+        $('p.sw-font-size-10xl').removeClass('sw-font-size-10xl').addClass('sw-font-size-5xl');
+        $('p.sw-font-size-9xl').removeClass('sw-font-size-9xl').addClass('sw-font-size-5xl');
+        $('p.sw-font-size-8xl').removeClass('sw-font-size-8xl').addClass('sw-font-size-5xl');
+        $('p.sw-font-size-7xl').removeClass('sw-font-size-7xl').addClass('sw-font-size-5xl');
+        $('p.sw-font-size-6xl').removeClass('sw-font-size-6xl').addClass('sw-font-size-4xl');
+        $('span.sw-font-size-10xl').removeClass('sw-font-size-10xl').addClass('sw-font-size-5xl');
+        $('span.sw-font-size-9xl').removeClass('sw-font-size-9xl').addClass('sw-font-size-5xl');
+        $('span.sw-font-size-8xl').removeClass('sw-font-size-8xl').addClass('sw-font-size-5xl');
+        $('span.sw-font-size-7xl').removeClass('sw-font-size-7xl').addClass('sw-font-size-5xl');
+        $('span.sw-font-size-6xl').removeClass('sw-font-size-6xl').addClass('sw-font-size-4xl');
+      }
+    });
+  </script>
+
+
+
+  <!-- /** Image lineup on mobile **/ -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function changeImageDirectionsOnMobile() {
+        var rowsWithImages = $('.row.align-items-center').has('img').toArray();
+
+        var rowsWithLeftSideImages = rowsWithImages.filter(row => {
+          return $(row).children().first().children().first().prop("tagName") === 'IMG';
+        });
+
+        rowsWithLeftSideImages.forEach(row => {
+          if ($(window).width() <= 768) {
+            row.classList.add('flex-column-reverse')
+          }
+        });
+      }
+      if ($(window).width() <= 768) {
+        changeImageDirectionsOnMobile();
+      }
+    });
+
+    /** BG Size on mobile **/
+    document.addEventListener("DOMContentLoaded", function () {
+      if ($(window).width() <= 768) {
+        var element = $('section.sw-background-size-auto, header.sw-background-size-auto');
+        element.removeClass('sw-background-size-auto');
+        element.css('background-size', 'cover');
+
+        $('section.sw-background-attachment-fixed, header.sw-background-attachment-fixed').removeClass('sw-background-attachment-fixed');
+      }
+    });
+
+    /** Disable zoom on mobile **/
+    document.addEventListener("DOMContentLoaded", function () {
+      if ($(window).width() <= 768) {
+        $('input.sw-font-size-s').removeClass('sw-font-size-s');
+        $('textarea.sw-font-size-s').removeClass('sw-font-size-s');
+        $('select.sw-font-size-s').removeClass('sw-font-size-s');
+      }
+    });
+
+  </script>
+</head>
+
+<body>
+
+  <div class="content">
+    <header></header>
+    <div id="home" style
+      class="hero1-2884c5a4-a822-42f2-b50b-39d59fa230a7 sw-background-color-000000 sw-padding-top-2xl sw-padding-bottom-2xl sw-border-top-style-none sw-border-top-width-xs sw-border-top-color-000000 sw-border-bottom-style-none sw-border-bottom-width-xs sw-border-bottom-color-000000  sw-background-repeat-no-repeat sw-background-size-cover sw-background-position-center sw-background-attachment-scroll "
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 text-center">
+            <img src="images/memoji.png" alt="memoji"
+              class="sw-percentage-width-m sw-border-style-none sw-border-width-xs sw-border-color-000000 sw-border-radius-m   mx-auto d-block"
+            />
+          </div>
+          <div class="col-lg-5 pt-5 pt-lg-0 text-center text-lg-left">
+            <h1
+              class="sw-font-size-4xl sw-text-color-82ceaf sw-font-family-comfortaa sw-font-weight-medium sw-padding-top-none sw-padding-bottom-2xs sw-letter-spacing-wide sw-line-height-loose "
+            >
+              thisispalash [dot] com
+            </h1>
+            <p
+              class="sw-font-size-l sw-text-color-eeeeee sw-font-family-montserrat sw-font-weight-default sw-padding-top-none sw-padding-bottom-1xl sw-letter-spacing-wide sw-line-height-loose ">
+              The entry point to my digital presence. Please click one of the links below to explore further.
+            </p>
+            <div class="d-flex justify-content-center justify-content-lg-start flex-wrap">
+              <!-- TODO move listeners to separate file -->
+              <!-- TODO hover listeners not working -->
+              <!-- onmouseover="buttonListeners('mouseover', 'message')"
+              onmouseout="buttonListeners('mouseout', 'message')" -->
+              <a data-element="button" id="btn-message" href
+                onclick="buttonListeners('click', 'message')"
+                class="sw-font-size-m sw-text-color-default sw-font-family-comfortaa sw-font-weight-medium sw-border-radius-full sw-background-color-default sw-padding-left-xs sw-padding-right-xs sw-padding-top-5xs sw-padding-bottom-5xs sw-border-style-solid sw-border-width-s sw-border-color-82ceaf sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline hover:sw-box-shadow-m sw-margin-bottom-6xs sw-margin-right-5xs sw-display-inline-block hover:sw-text-color-alt hover:sw-background-color-alt"
+              >
+              <!-- hover:sw-text-color-alt hover:sw-background-color-alt -->
+                Message
+              </a>
+            </div>
+            <!-- <div class="d-flex justify-content-center justify-content-lg-start flex-wrap">
+               TODO move listeners to separate file 
+               TODO hover listeners not working 
+               onmouseover="buttonListeners('mouseover', 'newsletter')"
+              onmouseout="buttonListeners('mouseout', 'newsletter')"
+              <a data-element="button" id="btn-newsletter"
+                onclick="buttonListeners('click', 'newsletter')"
+                class="sw-font-size-m sw-text-color-default sw-font-family-comfortaa sw-font-weight-medium sw-border-radius-full sw-background-color-default sw-padding-left-xs sw-padding-right-xs sw-padding-top-5xs sw-padding-bottom-5xs sw-border-style-solid sw-border-width-s sw-border-color-82ceaf sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline hover:sw-box-shadow-m sw-margin-bottom-6xs sw-margin-right-5xs sw-display-inline-block"
+              >
+               hover:sw-text-color-alt hover:sw-background-color-alt 
+                Newsletter
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"
+      class="sw-background-color-000000 sw-padding-top-2xl sw-padding-bottom-1xl sw-border-top-style-none sw-border-top-width-xs sw-border-top-color-000000 sw-border-bottom-style-none sw-border-bottom-width-xs sw-border-bottom-color-000000 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <hr id="footer-rule"
+              class="sw-margin-top-3xs sw-margin-bottom-3xs sw-border-top-style-solid sw-border-top-width-xs sw-border-top-color-cccccc ">
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class=" col-12 pb-1">
+            <div class="nav justify-content-center">
+              <a class="nav-link sw-font-size-m sw-text-color-82ceaf sw-font-family-comfortaa sw-font-weight-extrabold sw-letter-spacing-wide "
+                onmouseover="linkListeners('mouseover', 'footer-story')"
+                onmouseout="linkListeners('mouseout', 'footer-story')"
+                onclick="linkListeners('click', 'footer-story')"
+              >
+                Story
+              </a>
+              <a class="nav-link sw-font-size-m sw-text-color-82ceaf sw-font-family-comfortaa sw-font-weight-extrabold sw-letter-spacing-wide "
+                onmouseover="linkListeners('mouseover', 'footer-questions')"
+                onmouseout="linkListeners('mouseout', 'footer-questions')"
+                onclick="linkListeners('click', 'footer-questions')"
+              >
+                Questions
+              </a>
+              <a class="nav-link sw-font-size-m sw-text-color-82ceaf sw-font-family-comfortaa sw-font-weight-extrabold sw-letter-spacing-wide "
+                onmouseover="linkListeners('mouseover', 'footer-blockchain')"
+                onmouseout="linkListeners('mouseout', 'footer-blockchain')"
+                onclick="linkListeners('click', 'footer-blockchain')"
+              >
+                Blockchain
+              </a>
+              <a class="nav-link sw-font-size-m sw-text-color-82ceaf sw-font-family-comfortaa sw-font-weight-extrabold sw-letter-spacing-wide "
+                onmouseover="linkListeners('mouseover', 'footer-expressions')"
+                onmouseout="linkListeners('mouseout', 'footer-expressions')"
+                onclick="linkListeners('click', 'footer-expressions')"
+              >
+                Expressions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <!-- Link Functions -->
+  <script type="text/javascript">
+
+    function linkListeners(event, _id) {
+      // analytics('a', event, _id)
+      switch(event) {
+        case 'click': alert('Unimplemented! Please check back later!')
+          switch(_id) {
+            case 'footer-story': 
+              console.log('interested in my story huh?')
+              break;
+            case 'footer-questions': 
+              console.log('questions are amazing, aren\'t they?')
+              break;
+            case 'footer-blockchain': 
+              console.log('ooh baby, web3 is da way!')
+              break;
+            case 'footer-expressions': 
+              console.log('behlod! my creations!')
+              break;
+            default: console.log('Invalid link,', _id)
+          } break;
+        
+        case 'mouseover':
+          if(_id.includes('footer')) { 
+            $('#footer-rule').removeClass('sw-border-top-color-cccccc')
+            $('#footer-rule').addClass('sw-border-top-color-82ceaf')
+          } break;
+        case 'mouseout':
+          if(_id.includes('footer')) { 
+            $('#footer-rule').removeClass('sw-border-top-color-82ceaf')
+            $('#footer-rule').addClass('sw-border-top-color-cccccc')
+          } break;
+        default: console.log('Unimplemented case', 'a', event, _id)
+      }
+    }
+
+    function buttonListeners(event, _id) {
+      // analytics('btn', event, _id)
+      switch(event) {
+        case 'click': alert('Unimplemented! Please check back later!')
+          break;
+        case 'mouseover':
+          $('#btn-'+_id).removeClass('sw-text-color-default', 'sw-background-color-default')
+          $('#btn-'+_id).addClass('sw-text-color-alt', 'sw-background-color-alt')
+          break;
+        case 'mouseout':
+          $('#btn-'+_id).removeClass('sw-text-color-alt', 'sw-background-color-alt')
+          $('#btn-'+_id).addClass('sw-text-color-default', 'sw-background-color-default')
+          break;
+        default: console.log('Unimplemented case', 'btn', event, _id)
+      }
+    }
+
+  </script>
+
+
+
+
+  <script src="js/iframeResizer.contentWindow.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
