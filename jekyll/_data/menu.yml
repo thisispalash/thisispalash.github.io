@@ -1,0 +1,98 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: about
+    entries:
+      - title: "developer. read more <a href='#home-text'>below</a>."
+      - title: links
+        entries:
+          - title: GitHub
+            url: https://github.com/thisispalash
+          - title: Instagram
+            url: https://www.instagram.com/isthispalash
+          - title: Twitter
+            url: https://www.twitter.com/isthispalash
+
+
+  - title: developer work
+    entries:
+      - title: some of my projects that i've done / been a part of
+      - title: projects
+        post_list: true
+        category: project
+        limit: 5
+        show_more: true
+        show_more_url: projects.xml
+        show_more_text: "fascinating.."
+
+      - title: bounties
+        post_list: true
+        category: bounty
+        limit: 5
+        show_more: true
+        show_more_url: bounties.xml
+        show_more_text: "$$$"
+
+      - title: maybe..
+        post_list: true
+        category: todo
+        limit: 5
+        show_more: true
+        show_more_url: maybe.xml
+        show_more_text: "anything else?"
+
+
+  - title: writings
+    entries:
+      - title: sometimes i pretend i know stuff
+      - title: poetry
+        post_list: true
+        category: poem
+        limit: 5
+        show_more: true
+        show_more_url: poetry.html
+        show_more_text: "much amaze"
+
+      - title: fiction
+        post_list: true
+        category: prose
+        limit: 5
+        show_more: true
+        show_more_url: prose.html
+        show_more_text: "i'm hooked"
+
+      - title: musings
+        post_list: true
+        category: b3
+        limit: 5
+        show_more: true
+        show_more_url: bedside-blackboard.html
+        show_more_text: "crazy talk"
+
+  - title: media
+    entries:
+      - title: sometimes words just aren't enough
+      - title: photography
+        post_list: true
+        category: pics
+        limit: 15
+        show_more: true
+        show_more_url: photo.php
+        show_more_text: "such wow"
+
+      - title: filmography
+        post_list: true
+        category: vids
+        limit: 5
+        show_more: true
+        show_more_url: video.php
+        show_more_text: "very excite"
+
+      - title: music
+        post_list: true
+        category: song
+        limit: 5
+        show_more: true
+        show_more_url: sound.php
+        show_more_text: "omg why"

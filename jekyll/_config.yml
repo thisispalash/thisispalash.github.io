@@ -1,0 +1,19 @@
+title: thisispalash[.com]
+author: Palash A.
+url: https://thisispalash.com
+description: >
+  dreaming of the big things, failing at the little things.
+permalink: /:slug.eth
+goat_counter: "isthispalash"
+
+favicon: "memoji.png"
+remote_theme: riggraz/no-style-please
+theme_config:
+  appearance: "dark"
+  back_home_text: "home"
+  date_format: "%y-%m-%d [%H:%M]" # 21-03-05 [20:33] | EST # tz issue
+  show_description: true
+
+plugins:
+  - jekyll-seo-tag
+  # - jekyll-feed
