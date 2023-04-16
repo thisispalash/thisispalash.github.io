@@ -1,5 +1,4 @@
 import NextHead from 'next/head';
-import { GoogleFonts } from 'next-google-fonts';
 
 const titles = {
   index: [
@@ -38,7 +37,6 @@ export default function Head({ ...props }) {
     case 'index': title = titles.index[_i % titles.index.length]; break;
     default: title = title ?? titles.index[_i % titles.index.length];
   }
-  console.log(page, title, _i)
 
   return (
     <NextHead>
