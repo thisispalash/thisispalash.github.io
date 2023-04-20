@@ -1,4 +1,5 @@
 import NextHead from 'next/head';
+import { useEffect, useState } from 'react';
 
 const titles = {
   index: [
@@ -29,14 +30,18 @@ const metas = {
 export default function Head({ ...props }) {
 
   const { page } = props;
+  const [title, setTitle] = useState('');
 
-  let title, _i = Math.floor(Math.random() * 7);
-  switch(page) {
-    case 'b3': title = titles.b3[_i % titles.b3.length]; break;
-    case 'kdio': title = titles.kdio[_i % titles.kdio.length]; break;
-    case 'index': title = titles.index[_i % titles.index.length]; break;
-    default: title = title ?? titles.index[_i % titles.index.length];
-  }
+  
+  useEffect(() => {
+    let _i = Math.floor(Math.random() * 7);
+    switch(page) {
+      case 'b3': setTitle(titles.b3[_i % titles.b3.length]); break;
+      case 'kdio': setTitle(titles.kdio[_i % titles.kdio.length]); break;
+      case 'index': setTitle(titles.index[_i % titles.index.length]); break;
+      default: setTitle(title ?? titles.index[_i % titles.index.length]);
+    }
+  }, [])
 
   return (
     <NextHead>

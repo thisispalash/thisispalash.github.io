@@ -1,5 +1,5 @@
-import Head from '@/components/Head';
 import { AspectRatio, Divider, HStack, Image, Link, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import Head from '@/components/Head';
 import ContactFormModal from '@/components/ContactFormModal';
 
 export default function Home() {
@@ -49,10 +49,10 @@ export default function Home() {
           <Divider px={32} />
           <HStack spacing={8} px={12} textAlign='center'>
             <Spacer />
-            <Link href='/kdio'>
+            <Link href='/kdio' variant='reverse'>
               <Text fontFamily='heading' fontSize='lg'>khaaliDimaag [dot] io</Text>
             </Link>
-            <Link href='/b3'>
+            <Link href='/b3' variant='reverse'>
               <Text fontFamily='heading' fontSize='lg'>Bedside Blackboard</Text>
             </Link>
             <Spacer />
