@@ -8,7 +8,7 @@ import { GlobalProvider } from '@/context/GlobalContext';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <GlobalProvider state={{}}>
+      <GlobalProvider state={{ firstLoad: true }}>
         <Component {...pageProps} />
       </GlobalProvider>
     </ChakraProvider>

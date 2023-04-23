@@ -1,4 +1,4 @@
-import { useToast } from '@chakra-ui/react';
+import { Text, useToast } from '@chakra-ui/react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const GlobalContext = createContext({});
@@ -35,6 +35,7 @@ export const GlobalProvider = (
   const initialize = () => {
     setCurrent({
       ...current,
+      firstLoad: false,
       // Add your initial state here
     });
   }
@@ -46,9 +47,9 @@ export const GlobalProvider = (
       description: undefined,
       status: undefined,
       position: 'top',
-      variant: 'subtle',
-      isClosable: true,
-      duration: 1337,
+      variant: 'solid',
+      // isClosable: true,
+      duration: 3145,
     }
 
     switch(props.code) {
@@ -98,6 +99,18 @@ export const GlobalProvider = (
         }
     }
 
+    config.title = (
+      <Text fontFamily='heading' size='xl' color='textSecondary'>
+        {config.title}
+      </Text>
+    );
+
+    config.description = (
+      <Text fontFamily='body' size='md' color='text'>
+        {config.description}
+      </Text>
+    );
+
     setToastConfig(config);
   }
 
@@ -113,7 +126,7 @@ export const GlobalProvider = (
 
 
   useEffect(() => { if(toastConfig) toast(toastConfig); }, [toastConfig]);
-  useEffect(() => { if(Object.keys(current).length === 0) initialize(); }, [current]);
+  useEffect(() => { if(current.firstLoad) initialize(); }, [current]);
 
   return (
     <GlobalContext.Provider value={{
