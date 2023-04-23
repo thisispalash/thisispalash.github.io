@@ -5,7 +5,7 @@ if(!MONGODB_USERNAME || !MONGODB_PASSWORD || !MONGODB_CLUSTER) {
   throw new Error('Please define the MONGODB_USERNAME, MONGODB_PASSWORD, MONGODB_CLUSTER environment variable inside .env.local');
 }
 
-const URI = `mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_CLUSTER}/${MONGODB_DATABASE_NAME ?? 'dev'}?retryWrites=true&w=majority`;
+const URI = `mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_CLUSTER}/${MONGODB_DATABASE_NAME ?? 'test'}?retryWrites=true&w=majority`;
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
