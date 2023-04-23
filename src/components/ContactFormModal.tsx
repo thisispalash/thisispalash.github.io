@@ -28,6 +28,12 @@ export default function ContactFormModal({ ...props }) {
     return false;
   }
 
+  const clearForm = () => {
+    setFrom('');
+    setSubject('');
+    setMessage('');
+  }
+
   const sendMessage = async () => {
     setIsSending(true);
     if(!validateForm()) return setIsSending(false);
@@ -63,11 +69,10 @@ export default function ContactFormModal({ ...props }) {
   useEffect(() => {
     if(isOpen && window.sessionStorage.getItem(to)) {
       makeToast({ code: 403, description: 'You have already sent a message. Please settle down!' });
+      if(from || subject || message) clearForm();
       onClose();
     }
   }, [isOpen]);
-
-  // TODO: design contact form, connect backend
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} closeOnEsc={false} closeOnOverlayClick={true}>
