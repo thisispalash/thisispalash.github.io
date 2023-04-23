@@ -44,8 +44,6 @@ export default function ContactFormModal({ ...props }) {
       body: JSON.stringify({ to, from, subject, message })
     });
 
-    // TODO handle response
-
     switch(response.status) {
       case 200: 
         window.sessionStorage.setItem(to, message);
