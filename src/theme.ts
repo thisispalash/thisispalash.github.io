@@ -24,7 +24,7 @@ const colors = {
     800: '#6ce5b4',
     900: '#64edb6',
   },
-  bgGradient: 'linear-gradient(90deg, #65789a 0%, #0f0f0f 100%)',
+  bgGradient: 'linear-gradient(180deg, #65789a 0%, #000000 90%)',
   bgAlt: '#5B6C8A'
 }
 
