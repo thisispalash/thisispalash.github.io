@@ -1,4 +1,4 @@
-import { HStack, Input, VStack, Text, FormControl, FormLabel, FormHelperText, Spacer, Textarea } from '@chakra-ui/react';
+import { Input, VStack, Text, FormControl, FormLabel, FormHelperText, Spacer, Textarea } from '@chakra-ui/react';
 import { useState } from 'react';
 
 
@@ -38,20 +38,21 @@ export default function InputWithLabelAndFooter({ ...props }: any) {
         {props.isTextArea ?
           <Textarea
             rows={7}
-            bgColor='bgSecondary'
+            fontSize='sm'
             color='textSecondary'
+            bgColor={props.bg ?? 'bgSecondary'}
             focusBorderColor='highlight'
             value={props.value ?? value}
-            onChange={props.changeHandler ?? changeHandler} 
+            onChange={props.changeHandler ?? changeHandler}
           />
         :
           <Input 
             width='full'
             borderRadius='md'
-            bgColor='bgSecondary'
+            bgColor={props.bg ?? 'bgSecondary'}
             color='textSecondary'
             focusBorderColor='highlight'
-            size={props.size ?? 'sm'} 
+            size={props.size ?? 'md'} 
             type={props.type ?? 'text'} 
             value={props.value ?? value}
             autoComplete={props.autoComplete ?? 'off'}

@@ -1,7 +1,7 @@
-import { useGlobalContext } from '@/context/GlobalContext';
-import { Button, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, Spinner, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import InputWithLabelAndFooter from './atoms/InputWIthLabelAndFooter';
+import { Button, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, Spinner, Text, VStack } from '@chakra-ui/react';
+import { useGlobalContext } from '@/context/GlobalContext';
+import InputWithLabelAndFooter from '@/components/atoms/InputWIthLabelAndFooter';
 
 export default function ContactFormModal({ ...props }) {
 
@@ -10,6 +10,10 @@ export default function ContactFormModal({ ...props }) {
   const [ subject, setSubject ] = useState('');
   const [ message, setMessage ] = useState('');
   const [ isSending, setIsSending ] = useState(false);
+
+  const [ bgModal, setBgModal ] = useState('bg');
+  const [ bgInput, setBgInput ] = useState('bgAlternate');
+  const [ buttonScheme, setButtonScheme ] = useState('highlights');
 
   // @ts-ignore
   const { makeToast } = useGlobalContext();
@@ -59,7 +63,12 @@ export default function ContactFormModal({ ...props }) {
   useEffect(() => {
     switch(loc) {
       case 'home': setTo('@thisispalash'); break;
-      case 'kdio': setTo('@kdio'); break;
+      case 'kdio': 
+        setTo('@kdio'); 
+        setBgModal('bgAlternate'); 
+        setBgInput('bgAltSecondary'); 
+        setButtonScheme('highlightsAlt'); 
+        break;
       default: setTo('@isthispalash'); break;
     }
   }, [loc]);
@@ -76,7 +85,7 @@ export default function ContactFormModal({ ...props }) {
     <Modal isOpen={isOpen} onClose={onClose} closeOnEsc={false} closeOnOverlayClick={true}>
       <ModalOverlay />
       <ModalContent 
-        bgColor='bg' 
+        bgColor={bgModal}
         borderStyle='solid'
         borderColor='highlight'
         borderWidth='2px'
@@ -96,23 +105,27 @@ export default function ContactFormModal({ ...props }) {
             <InputWithLabelAndFooter
               label='To'
               value={to}
+              bg={bgInput}
               isDisabled={true}
             />
             <InputWithLabelAndFooter
               label='From'
               value={from}
+              bg={bgInput}
               isRequired={true}
               changeHandler={(e: any) => setFrom(e.target.value)}
             />
             <InputWithLabelAndFooter
               label='Subject'
               value={subject}
+              bg={bgInput}
               isRequired={true}
               changeHandler={(e: any) => setSubject(e.target.value)}
             />
             <InputWithLabelAndFooter
               label='Message'
               value={message}
+              bg={bgInput}
               isRequired={true}
               isTextArea={true}
               changeHandler={(e: any) => setMessage(e.target.value)}
@@ -127,7 +140,7 @@ export default function ContactFormModal({ ...props }) {
             onClick={sendMessage} 
             isDisabled={isSending}
             borderColor='highlight' 
-            colorScheme='highlights' 
+            colorScheme={buttonScheme}
           >
             {isSending ? <Spinner /> : 'Send'}
           </Button>
