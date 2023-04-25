@@ -26,6 +26,7 @@ const MessageSchema = new mongoose.Schema({
 
 export default mongoose.models.Message || mongoose.model('Message', MessageSchema);
 
+
 /* Methods */
 
 export async function asyncGet(_id: string) {
