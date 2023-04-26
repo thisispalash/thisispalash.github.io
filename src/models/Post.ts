@@ -36,7 +36,7 @@ export function asyncGetById(_id: string) {
 }
 
 export function asyncGetAll() {
-  return mongoose.models.Post.find({}, '-mkdown').sort('-dateUpdated').lean();
+  return mongoose.models.Post.find().sort('-dateUpdated').lean();
 }
 
 export function asyncFilterByTags(tags: Tag[] | string[]) {

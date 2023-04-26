@@ -5,11 +5,17 @@ import { useEffect, useState } from 'react';
 import { useGlobalContext } from '@/context/GlobalContext';
 import { Tag } from '@/models/Post';
 import { FaArrowLeft } from 'react-icons/fa';
+import LinkAndTitle from '@/components/atoms/posts/LinkAndTitle';
+import DateAndTags from '@/components/atoms/posts/DateAndTags';
 
 type Post = {
   _id: string;
   title: string;
   tags: Array<Tag>;
+  dateCreated: Date | string;
+  dateUpdated: Date | string;
+  responses: number;
+  version: number;
 }
 
 export default function Home() {
@@ -27,6 +33,8 @@ export default function Home() {
   const getTitles = async () => {
     setLoaded(false);
     const response = await fetch('/api/b3/get', { method: 'POST' });
+
+    console.log(response)
 
     switch(response.status) {
       case 200: setPosts(await response.json()); break;
@@ -56,6 +64,8 @@ export default function Home() {
   }
 
   useEffect(() => { getTitles(); }, []);
+  useEffect(() => { if(postId) onOpen(); }, [postId]);
+  useEffect(() => { if(!isOpen) setPostId(''); }, [isOpen]);
 
   return (
     <>
@@ -76,34 +86,29 @@ export default function Home() {
 
         {/* Content */}
         {loaded && posts.length !== 0 &&
-          <VStack spacing={4} px={8} w='full'>
-            {posts.map( (post, _) => {
-
-              const copyPermalink = () => {
-                const uri = `https://thisispalash.com/b3/${post._id}`;
-                // TODO : copy to clipboard
-                // TODO : display toast
+          <VStack 
+            spacing={4} 
+            px={8} w='full' h='full' 
+            overflowX='scroll'
+            css={{
+              '&::-webkit-scrollbar': {
+                display: 'none'
               }
-
-              const readPost = () => { setPostId(post._id); onOpen(); }
+            }}
+          >
+            {posts.map( (post, _) => {
               
               return (
                 <VStack spacing={4} w='full' key={post._id}>
-                  <HStack spacing={4} w='full'>
-                    {/* DateTimeDisplay */}
-                    {/* Tags */}
-                    <Spacer />
-                  </HStack>
-
-                  <HStack spacing={4} w='full'>
-                    <Link onClick={copyPermalink}>
-                      {/* ExternalLinkIcon */}
-                    </Link>
-                    <Text onClick={readPost}>
-                      {post.title}
-                    </Text>
-                    <Spacer />
-                  </HStack>
+                  <DateAndTags
+                    date={post.dateUpdated}
+                    tags={post.tags}
+                  />
+                  <LinkAndTitle 
+                    _id={post._id}
+                    title={post.title}
+                    titleClickAction={() => setPostId(post._id)}
+                  />
                 </VStack>
               );
             })}
