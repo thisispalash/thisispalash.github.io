@@ -1,8 +1,10 @@
-import { AspectRatio, Box, Divider, Heading, HStack, Image, Link, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { AspectRatio, Box, Button, Divider, Heading, HStack, Icon, Image, Input, Link, Spacer, Spinner, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import Head from '@/components/Head';
 import PostModal from '@/components/PostModal';
 import { useEffect, useState } from 'react';
+import { useGlobalContext } from '@/context/GlobalContext';
 import { Tag } from '@/models/Post';
+import { FaArrowLeft } from 'react-icons/fa';
 
 type Post = {
   _id: string;
@@ -12,21 +14,45 @@ type Post = {
 
 export default function Home() {
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [ posts, setPosts ] = useState<Array<Post>>([]);
   const [ postId, setPostId ] = useState<String>('');
-  const [ loading, setLoading ] = useState<Boolean>(false);
+  const [ loaded, setLoaded ] = useState<Boolean>(false);
+  const [ email, setEmail ] = useState<String>('');
+  const [ resgistred, setRegistered ] = useState<Boolean>(false);
 
-  const contact = () => {
-    onOpen();
-  }
+  // @ts-ignore
+  const { makeToast } = useGlobalContext();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const getTitles = async () => {
-    setLoading(true);
+    setLoaded(false);
     const response = await fetch('/api/b3/get', { method: 'POST' });
 
-    setLoading(false);
+    switch(response.status) {
+      case 200: setPosts(await response.json()); break;
+      default: console.log('error'); makeToast({ code: 500 });
+    }
+
+    setLoaded(true);
+  }
+
+  const signup = async () => {
+    const response = await fetch('/api/b3/signup', { 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    switch(response.status) {
+      case 200: setRegistered(true); makeToast({ code: 200 }); break;
+      default: makeToast({ code: 500 });
+    }
+  }
+
+  const filter = async () => {
+    setLoaded(false);
+    // TODO: implement filtering posts
+    setLoaded(true);
   }
 
   useEffect(() => { getTitles(); }, []);
@@ -46,8 +72,10 @@ export default function Home() {
 
         <Spacer />
 
+        {!loaded && <Spinner size='xl' />}
+
         {/* Content */}
-        {posts.length !== 0 &&
+        {loaded && posts.length !== 0 &&
           <VStack spacing={4} px={8} w='full'>
             {posts.map( (post, _) => {
 
@@ -82,30 +110,49 @@ export default function Home() {
           </VStack>
         }
 
-        {posts.length === 0 &&
-          <Text>
-            There's no posts published yet.
-          </Text>
-          // TODO : signup to newsletter.
+        {loaded && posts.length === 0 &&
+          <VStack spacing={6} px={8} w='full'>
+            <Text>
+              There are no posts published yet.
+            </Text>
+
+            {/* Sign up to b3 */}
+            {/* TODO */}
+            {!resgistred &&
+              <HStack spacing={4} w='50%'>
+                <Input 
+                  isDisabled
+                  type='text' 
+                  fontSize='sm'
+                  variant='outline'
+                  focusBorderColor='highlight'
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder='Receive an email when there is a new post?'
+                />
+                <Button variant='outline' size='sm' colorScheme='highlights' onClick={signup} isDisabled>
+                  Sign Up!
+                </Button>
+              </HStack>
+            }
+          </VStack>
         }
+
 
 
         <Spacer />
 
         {/* Footer */}
-        <VStack spacing={2} py={8}>
-          <Divider px={32} />
-          <HStack spacing={8} px={12} textAlign='center'>
-            <Spacer />
-            <Link href='/kdio' variant='reverse'>
-              <Text fontFamily='heading' fontSize='lg'>khaaliDimaag [dot] io</Text>
-            </Link>
-            <Link href='/b3' variant='reverse'>
-              <Text fontFamily='heading' fontSize='lg'>Bedside Blackboard</Text>
-            </Link>
-            <Spacer />
-          </HStack>
-        </VStack>
+        <HStack spacing={8} px={12} textAlign='center' w='full'>
+          <Link href='/' variant='reverse'>
+            <Text fontFamily='heading' fontSize='lg'>
+              <Icon as={FaArrowLeft} fontSize='md' /> Go Back
+            </Text>
+          </Link>
+          <Spacer />
+          <Button variant='ghost' colorScheme='highlights' onClick={filter} isDisabled>
+
+          </Button>
+        </HStack>
 
       </VStack>
 

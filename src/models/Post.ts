@@ -29,20 +29,33 @@ const PostSchema = new mongoose.Schema({
 export default mongoose.models.Post || mongoose.model('Post', PostSchema);
 
 
-/* Methods */
+/* Methods (return promises, have to be waited upon) */
 
-export async function asyncGetById(_id: string) {
+export function asyncGetById(_id: string) {
   return mongoose.models.Post.findOne({ _id }).lean();
 }
 
-export async function asyncGetAll() {
-  // returns only _id, createdAt, updatedAt and title
+export function asyncGetAll() {
+  return mongoose.models.Post.find({}, '-mkdown').sort('-dateUpdated').lean();
 }
 
-export async function asyncFilterByTags(tags: Tag[] | string[]) {
-
+export function asyncFilterByTags(tags: Tag[] | string[]) {
+  // TODO
 }
 
-export async function asyncUpdate(_data: Partial<Post>) {
+export function asyncUpdate(_data: Partial<Post>) {
+  const { _id, title, mkdown, tags, ...data } = _data;
+  
+  if(_id) return mongoose.models.Post.findOneAndUpdate({ _id }, { title, mkdown, tags }, { new: true });
+  
+  const datetime = new Date();
 
+  return mongoose.models.Post.create({
+    title, mkdown, tags,
+    _id: new mongoose.Types.ObjectId(),
+    dateCreated: datetime,
+    dateUpdated: datetime,
+    responses: 0,
+    version: 0,
+  });
 }

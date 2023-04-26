@@ -27,18 +27,18 @@ const MessageSchema = new mongoose.Schema({
 export default mongoose.models.Message || mongoose.model('Message', MessageSchema);
 
 
-/* Methods */
+/* Methods (return promises, have to be waited upon) */
 
-export async function asyncGet(_id: string) {
+export function asyncGet(_id: string) {
   return mongoose.models.Message.findOne({ _id })/*.populate()*/.lean();
 }
 
-export async function asyncUpdate(_data: Partial<Message>) {
+export function asyncUpdate(_data: Partial<Message>) {
   const { _id, ...data } = _data;
   
-  if(_id) return await mongoose.models.Message.findOneAndUpdate({ _id }, data, { new: true });
+  if(_id) return mongoose.models.Message.findOneAndUpdate({ _id }, data, { new: true });
   
-  return await mongoose.models.Message.create({
+  return mongoose.models.Message.create({
     ...data,
     _id: new mongoose.Types.ObjectId(),
     createdAt: new Date(),
