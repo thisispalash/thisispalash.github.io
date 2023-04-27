@@ -1,9 +1,10 @@
-import { HStack, Link, Modal, ModalContent, ModalOverlay, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Center, HStack, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Spacer, Spinner, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import LinkAndTitle from '@/components/atoms/posts/LinkAndTitle';
 import DateAndTags from '@/components/atoms/posts/DateAndTags';
 import MarkdownViewer from '@/components/atoms/MarkdownViewer';
 import { Tag } from '@/models/Post';
+import { useGlobalContext } from '@/context/GlobalContext';
 
 type Post = {
   _id: string;
@@ -19,12 +20,16 @@ type Post = {
 export default function PostModal({ ...props }) {
   
   const [ post, setPost ] = useState<Post>();
+  const [ loaded, setLoaded ] = useState<Boolean>(false);
   
-  const { _id } = props;
+  const { _post } = props;
   const { isOpen, onClose } = props;
 
+  // @ts-ignore
+  const { makeToast } = useGlobalContext();
 
   const getPost = async (_id: string) => {
+    setLoaded(false);
     const response = await fetch('/api/b3/get', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -33,32 +38,56 @@ export default function PostModal({ ...props }) {
 
     switch(response.status) {
       case 200: setPost(await response.json()); break;
-      default: console.log('error');
+      default: makeToast({ code: 500 });
     }
+    setLoaded(true);
   }
 
-  useEffect(() => {
-    if(_id) getPost(_id);
-  }, [_id]);
+  useEffect(() => { if(_post) getPost(_post._id) }, [_post]);
+  useEffect(() => { if(!isOpen) setPost(undefined) }, [isOpen]);
 
   return(
-    <Modal isOpen={isOpen} onClose={onClose} size='full'>
+    <Modal 
+      size='80%'
+      scrollBehavior='inside'
+      closeOnEsc={true}
+      closeOnOverlayClick={true}
+      isOpen={isOpen} onClose={onClose}
+    >
       <ModalOverlay />
-      <ModalContent p={6} w='full' h='full'>
-        <VStack spacing={6} w='full' h='full'>
+      <ModalContent 
+        m={24} p={8} 
+        minH='80vh' minW='80vw'
+        maxH='80vh' maxW='80vw'
+        bgColor='bg'
+        borderWidth='2px'
+        borderStyle='solid'
+        borderColor='highlight'
+        color='textSecondary'
+      >
+        <ModalHeader >
           <VStack spacing={2} w='full'>
             <LinkAndTitle
-              _id={post?._id}
-              title={post?.title}
+              _id={_post?._id}
+              title={_post?.title}
+              isHeading
             />
             <DateAndTags
-              date={post?.dateUpdated}
-              tags={post?.tags}
+              date={_post?.dateUpdated}
+              tags={_post?.tags}
             />
           </VStack>
-          <MarkdownViewer mkdown={post?.mkdown} />
-          <Spacer />
-        </VStack>
+        </ModalHeader>
+        <ModalBody bgGradient='radial(#0f0f0f, #000000)' borderRadius='xl'>
+          {!loaded && 
+            <Center w='full'>
+              <Spinner size='lg' />
+            </Center>
+          }
+          {loaded && <MarkdownViewer mkdown={post?.mkdown} />}
+        </ModalBody>
+
+
       </ModalContent>
     </Modal>
   );

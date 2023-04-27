@@ -5,7 +5,7 @@ import { FaLink } from 'react-icons/fa';
 
 export default function LinkAndTitle({ ...props }) {
 
-  let { _id, title, titleClickAction } = props;
+  let { _id, title, titleClickAction, isHeading } = props;
   if(!titleClickAction) titleClickAction = () => {};
 
   // @ts-ignore
@@ -20,9 +20,13 @@ export default function LinkAndTitle({ ...props }) {
   return(
     <HStack spacing={4} w='full'>
       <Link onClick={copyPermalink}>
-        <Icon as={FaLink} fontSize='md' />
+        <Icon as={FaLink} fontSize={isHeading? 'md':'sm'} />
       </Link>
-      <Text onClick={titleClickAction}>
+      <Text 
+        onClick={titleClickAction}
+        fontSize={isHeading? 'xl':'md'}
+        variant={isHeading? 'heading' : 'clickable'}
+      >
         {title}
       </Text>
       <Spacer />

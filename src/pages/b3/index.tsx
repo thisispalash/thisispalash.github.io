@@ -22,6 +22,7 @@ export default function Home() {
 
   const [ posts, setPosts ] = useState<Array<Post>>([]);
   const [ postId, setPostId ] = useState<String>('');
+  const [ selectedPost, setSelectedPost ] = useState<Post>();
   const [ loaded, setLoaded ] = useState<Boolean>(false);
   const [ email, setEmail ] = useState<String>('');
   const [ resgistred, setRegistered ] = useState<Boolean>(false);
@@ -64,8 +65,8 @@ export default function Home() {
   }
 
   useEffect(() => { getTitles(); }, []);
-  useEffect(() => { if(postId) onOpen(); }, [postId]);
-  useEffect(() => { if(!isOpen) setPostId(''); }, [isOpen]);
+  useEffect(() => { if(selectedPost) onOpen(); }, [selectedPost]);
+  useEffect(() => { if(!isOpen) setSelectedPost(undefined); }, [isOpen]);
 
   return (
     <>
@@ -87,19 +88,15 @@ export default function Home() {
         {/* Content */}
         {loaded && posts.length !== 0 &&
           <VStack 
-            spacing={4} 
-            px={8} w='full' h='full' 
-            overflowX='scroll'
-            css={{
-              '&::-webkit-scrollbar': {
-                display: 'none'
-              }
-            }}
+            spacing={8} 
+            px={8}
+            w='full' h='full'
+            overflowY='scroll'
           >
             {posts.map( (post, _) => {
               
               return (
-                <VStack spacing={4} w='full' key={post._id}>
+                <VStack spacing={2} w='full' key={post._id}>
                   <DateAndTags
                     date={post.dateUpdated}
                     tags={post.tags}
@@ -107,7 +104,7 @@ export default function Home() {
                   <LinkAndTitle 
                     _id={post._id}
                     title={post.title}
-                    titleClickAction={() => setPostId(post._id)}
+                    titleClickAction={() => setSelectedPost(post)}
                   />
                 </VStack>
               );
@@ -164,7 +161,7 @@ export default function Home() {
       <PostModal
         isOpen={isOpen}
         onClose={onClose}
-        _id={postId}
+        _post={selectedPost}
       />
 
     </>

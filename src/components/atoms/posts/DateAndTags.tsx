@@ -1,13 +1,19 @@
-import { HStack, Spacer } from '@chakra-ui/react';
-
+import { Stack, Spacer } from '@chakra-ui/react';
+import DateTimeDisplay from '@/components/atoms/DateTimeDisplay';
 
 export default function DateAndTags({ ...props }) {
 
+  const { date, tags, isHeading } = props;
+
   return (
-    <HStack spacing={4} w='full'>
-      {/* DateTimeDisplay */}
+    <Stack 
+      w='full'
+      spacing={4} 
+      direction={isHeading? 'column' : 'row'}
+    >
+      <DateTimeDisplay _date={date} />
       {/* Tags */}
       <Spacer />
-    </HStack>
+    </Stack>
   );
 }
