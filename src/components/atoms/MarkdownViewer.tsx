@@ -7,7 +7,10 @@ export default function MarkdownViewer({ ...props }) {
   const { mkdown } = props;
 
   return (
-    <Box p={8}>
+    <Box p={8}
+      overflowY='scroll'
+      textAlign='justify'
+    >
       <ReactMarkdown
         skipHtml
         children={mkdown}

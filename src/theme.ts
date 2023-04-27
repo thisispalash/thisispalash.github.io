@@ -43,6 +43,9 @@ const colors = {
 
 const styles = {
   global: {
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    },
     body: {
       bg: 'bg',
       color: 'text',
@@ -68,9 +71,28 @@ const components = {
           textDecoration: 'none',
           color: 'text',
         },
-      }
+      },
     }
   },
+  Text: {
+    baseStyle: {
+      fontsize: 'md',
+      lineHeight: 'tall',
+    },
+    variants: {
+      'clickable': {
+        cursor: 'pointer',
+        _hover: {
+          color: 'highlight',
+        }
+      },
+      'heading': {
+        fontFamily: 'heading',
+        fontSize: '2xl',
+
+      }
+    }
+  }
 }
 
 export const theme = extendTheme({
