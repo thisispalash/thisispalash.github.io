@@ -35,8 +35,6 @@ export default function Home() {
     setLoaded(false);
     const response = await fetch('/api/b3/get', { method: 'POST' });
 
-    console.log(response)
-
     switch(response.status) {
       case 200: setPosts(await response.json()); break;
       default: console.log('error'); makeToast({ code: 500 });
