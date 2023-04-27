@@ -12,7 +12,7 @@ export default function ContactFormModal({ ...props }) {
   const [ isSending, setIsSending ] = useState(false);
 
   const [ bgModal, setBgModal ] = useState('bg');
-  const [ bgInput, setBgInput ] = useState('bgAlternate');
+  const [ bgInput, setBgInput ] = useState('bgSecondary');
   const [ buttonScheme, setButtonScheme ] = useState('highlights');
 
   // @ts-ignore
