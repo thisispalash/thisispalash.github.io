@@ -56,7 +56,17 @@ export const GlobalProvider = (
       case 200:
         config.title = props.title ?? 'Success';
         config.description = props.description ?? 'Congratulations! The stars aligned and your action was successful!';
-        config.status = 'success' // @dev code 200 is always a success
+        config.status = 'success'; // @dev code 200 is always a success
+        break;
+      case 201:
+        config.title = props.title ?? 'Created Resource';
+        config.description = props.description ?? 'Your action has created a new resource! COngratulations!';
+        config.status = 'success';
+        break;
+      case 202:
+        config.title = props.title ?? 'Accepted Request';
+        config.description = props.description ?? 'Congratulations! Your request was accepted! There may still be some action pending before this transaction is completed.';
+        config.status = 'info';
         break;
       case 400:
         config.title = props.title ?? 'Invalid Input';
