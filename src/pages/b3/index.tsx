@@ -21,7 +21,6 @@ type Post = {
 export default function Home() {
 
   const [ posts, setPosts ] = useState<Array<Post>>([]);
-  const [ postId, setPostId ] = useState<String>('');
   const [ selectedPost, setSelectedPost ] = useState<Post>();
   const [ loaded, setLoaded ] = useState<Boolean>(false);
   const [ email, setEmail ] = useState<String>('');
