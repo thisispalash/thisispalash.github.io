@@ -13,6 +13,7 @@ export type Post = {
   dateUpdated: Date;
   responses: number;
   version: number;
+  author: string;
 }
 
 const PostSchema = new mongoose.Schema({
@@ -24,6 +25,7 @@ const PostSchema = new mongoose.Schema({
   dateUpdated: Date,
   responses: Number,
   version: Number,
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'Writer' },
 });
 
 export default mongoose.models.Post || mongoose.model('Post', PostSchema);
@@ -55,6 +57,7 @@ export function asyncUpdate(_data: Partial<Post>) {
     _id: new mongoose.Types.ObjectId(),
     dateCreated: datetime,
     dateUpdated: datetime,
+    author: data.author,
     responses: 0,
     version: 0,
   });
