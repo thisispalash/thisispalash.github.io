@@ -14,7 +14,6 @@ handler.post(async (req, res) => {
 
   const { _id, _title, _editor, _tags } = req.body;
 
-  console.log('req.body', req.body)
   const _post = {
     _id,
     title: _title ?? 'new b3 post; todo add title support',

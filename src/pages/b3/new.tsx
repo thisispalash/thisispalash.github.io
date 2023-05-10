@@ -5,13 +5,17 @@ import { OutputData } from '@editorjs/editorjs/types';
 
 import SigninModal from '@/components/SigninModal';
 import { Button, Divider, HStack, Heading, Spacer, Text, VStack, useDisclosure } from '@chakra-ui/react';
+import { useGlobalContext } from '@/context/GlobalContext';
 
 export default function Home() {
 
+  // @ts-ignore
+  const { makeToast } = useGlobalContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   
   const [ hasAccess, setHasAccess ] = useState<Boolean>(false);
   const [ post, setPost ] = useState<OutputData | null>(null);
+  const [ title, setTitle ] = useState<String>('');
 
   useEffect(() => { if(!hasAccess) onOpen(); }, []);
   useEffect(() => { console.log(post); }, [post]);
@@ -22,13 +26,17 @@ export default function Home() {
     fetch('/api/b3/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ _editor: post })
+      body: JSON.stringify({ _editor: post, _title: title })
+    }).then( res => {
+      if(res.status !== 200) makeToast({ code: 500 });
+      return res.json();
+    }).then( data => {
+      makeToast({
+        code: 200,
+        title: 'Post Created',
+        description: `Your post has been created successfully. Post id: \`${data?._id}\``,
+      });
     });
-  }
-
-  const postChanged = (data: OutputData) => {
-    console.log('post changed');
-    console.log(data);
   }
 
   return(
@@ -57,6 +65,8 @@ export default function Home() {
             isViewer={false} 
             _post={post ?? undefined}
             changeHandler={setPost}
+            title={title}
+            titleHandler={setTitle}
           />
         </VStack>
       }

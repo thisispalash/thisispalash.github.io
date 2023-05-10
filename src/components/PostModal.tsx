@@ -68,7 +68,7 @@ export default function PostModal({ ...props }) {
             />
           </VStack>
         </ModalHeader>
-        <ModalBody bgGradient='radial(#0f0f0f, #000000)' borderRadius='xl'>
+        <ModalBody borderRadius='xl'>
           {!loaded && 
             <Center w='full'>
               <Spinner size='lg' />
