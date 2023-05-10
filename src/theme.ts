@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { withProse } from '@nikolovlazar/chakra-ui-prose';
 
 const fonts = {
   heading: 'Comfortaa, sans-serif',
@@ -41,6 +42,11 @@ const colors = {
   bgGradient: 'linear-gradient(180deg, #65789a 0%, #000000 90%)'
 }
 
+const editorJSColors = {
+  bg: 'bg',
+  color: 'textSecondary',
+}
+
 const styles = {
   global: {
     '&::-webkit-scrollbar': {
@@ -52,7 +58,13 @@ const styles = {
       fontFamily: 'body',
       fontSize: 'md',
       lineHeight: 'tall',
-    }
+    },
+    '.ce-popover': editorJSColors,
+    '.cdx-search-field': editorJSColors,
+    '.ce-popover__item-icon': editorJSColors,
+    '.ce-inline-toolbar--showed': editorJSColors,
+    '.ce-conversion-toolbar--showed': editorJSColors,
+    '.ce-conversion-tool__icon': editorJSColors,
   }
 }
 
@@ -95,9 +107,9 @@ const components = {
   }
 }
 
-export const theme = extendTheme({
-  fonts,
-  colors,
-  styles,
-  components,
-});
+const proseStyles = {}
+
+export const theme = extendTheme( 
+  withProse(proseStyles),
+  { fonts, colors, styles, components },
+);
