@@ -59,6 +59,11 @@ const styles = {
       fontSize: 'md',
       lineHeight: 'tall',
     },
+    '::selection': {
+      color: 'bgSecondary',
+      bg: 'highlight',
+    },
+    '.ce-block--selected': { color: 'bgSecondary' },
     '.ce-popover': editorJSColors,
     '.cdx-search-field': editorJSColors,
     '.ce-popover__item-icon': editorJSColors,
