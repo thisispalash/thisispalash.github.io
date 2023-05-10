@@ -16,6 +16,7 @@ handler.post(async (req, res) => {
   
   if(_id) {
     const post = await asyncGetById(_id);
+    // @ts-ignore
     if(post.error) return res.status(500).json({ error: post.error });
     return res.status(200).json(post);
   }
