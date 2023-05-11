@@ -69,6 +69,10 @@ export default function ContactFormModal({ ...props }) {
         setBgInput('bgAltSecondary'); 
         setButtonScheme('highlightsAlt'); 
         break;
+      case 'b3': 
+        setTo('@b3'); 
+        setSubject(props.post_id);
+        break;
       default: setTo('@isthispalash'); break;
     }
   }, [loc]);
@@ -116,10 +120,11 @@ export default function ContactFormModal({ ...props }) {
               changeHandler={(e: any) => setFrom(e.target.value)}
             />
             <InputWithLabelAndFooter
-              label='Subject'
+              label={loc === 'b3'? 'Post' : 'Subject'}
               value={subject}
               bg={bgInput}
               isRequired={true}
+              isDisabled={loc === 'b3'}
               changeHandler={(e: any) => setSubject(e.target.value)}
             />
             <InputWithLabelAndFooter

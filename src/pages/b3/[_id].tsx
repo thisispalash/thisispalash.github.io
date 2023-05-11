@@ -1,16 +1,20 @@
+import ContactFormModal from '@/components/ContactFormModal';
 import Head from '@/components/Head';
 import B3Viewer from '@/components/atoms/B3Viewer';
 import DateAndTags from '@/components/atoms/posts/DateAndTags';
 import LinkAndTitle from '@/components/atoms/posts/LinkAndTitle';
 import { Post } from '@/models/Post';
-import { Spinner, VStack } from '@chakra-ui/react';
+import { Button, ButtonGroup, Icon, Link, Spinner, Text, VStack, useDisclosure } from '@chakra-ui/react';
 import { GetServerSidePropsContext } from 'next';
+import { FaArrowLeft, FaRegCommentAlt } from 'react-icons/fa';
 
 export type PostReaderProps = {
   post: Post; // @dev JSON.stringify(Post)
 }
 
 export default function Home({ post }: PostReaderProps) {
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return(
 
@@ -36,11 +40,43 @@ export default function Home({ post }: PostReaderProps) {
         </>}
       </VStack>
 
-      {/* Footer TODO */}
+      {/* Go to B3 link */}
+      
 
       {/* Message Button */}
+        <Button 
+          size='lg' 
+          zIndex={9}
+          variant='outline' 
+          position='fixed' 
+          borderRadius='full'
+          bottom={12} right={12} 
+          colorScheme='highlights'
+          onClick={onOpen}
+        >
+          <Icon as={FaRegCommentAlt} />
+        </Button>
+        <Button 
+          size='lg' 
+          zIndex={9}
+          variant='outline' 
+          position='fixed' 
+          borderRadius='full'
+          bottom={12} left={12} 
+          colorScheme='highlights'
+          onClick={() => window.open('/b3', '_self')}
+        >
+          <Text fontFamily='heading' fontSize='lg'>
+            B<sup>3</sup>
+          </Text>
+        </Button>
 
-      {/* Go to B3 link */}
+      <ContactFormModal
+        loc='b3'
+        isOpen={isOpen}
+        onClose={onClose}
+        post_id={post?._id}
+      />
     </>
 
   );
