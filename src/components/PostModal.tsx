@@ -2,20 +2,10 @@ import { Center, HStack, Link, Modal, ModalBody, ModalContent, ModalHeader, Moda
 import { useEffect, useState } from 'react';
 import LinkAndTitle from '@/components/atoms/posts/LinkAndTitle';
 import DateAndTags from '@/components/atoms/posts/DateAndTags';
-import MarkdownViewer from '@/components/atoms/MarkdownViewer';
-import { Tag } from '@/models/Post';
+import { Post, Tag } from '@/models/Post';
 import { useGlobalContext } from '@/context/GlobalContext';
+import B3Viewer from './atoms/B3Viewer';
 
-type Post = {
-  _id: string;
-  title: string;
-  mkdown: string;
-  tags: Array<Tag>;
-  dateCreated: Date | string;
-  dateUpdated: Date | string;
-  responses: number;
-  version: number;
-}
 
 export default function PostModal({ ...props }) {
   
@@ -78,13 +68,13 @@ export default function PostModal({ ...props }) {
             />
           </VStack>
         </ModalHeader>
-        <ModalBody bgGradient='radial(#0f0f0f, #000000)' borderRadius='xl'>
+        <ModalBody borderRadius='xl'>
           {!loaded && 
             <Center w='full'>
               <Spinner size='lg' />
             </Center>
           }
-          {loaded && <MarkdownViewer mkdown={post?.mkdown} />}
+          {loaded && post && <B3Viewer _post={post!} />}
         </ModalBody>
 
 

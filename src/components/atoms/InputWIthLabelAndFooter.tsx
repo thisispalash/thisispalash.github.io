@@ -9,8 +9,6 @@ export default function InputWithLabelAndFooter({ ...props }: any) {
   const [value, setValue] = useState('');
   const changeHandler = (e: any) => { setValue(e.target.value); }
 
-  console.log(props)
-
   return (
     <FormControl 
       isRequired={props.isRequired} 
@@ -44,10 +42,11 @@ export default function InputWithLabelAndFooter({ ...props }: any) {
             focusBorderColor='highlight'
             value={props.value ?? value}
             onChange={props.changeHandler ?? changeHandler}
+            placeholder={props.placeholder ?? ''}
           />
         :
           <Input 
-            width='full'
+            width={props.width ?? 'full'}
             borderRadius='md'
             bgColor={props.bg ?? 'bgSecondary'}
             color='textSecondary'
@@ -57,6 +56,7 @@ export default function InputWithLabelAndFooter({ ...props }: any) {
             value={props.value ?? value}
             autoComplete={props.autoComplete ?? 'off'}
             onChange={props.changeHandler ?? changeHandler} 
+            placeholder={props.placeholder ?? ''}
           />
         }
         <Spacer />

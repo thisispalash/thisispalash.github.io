@@ -21,7 +21,6 @@ type Post = {
 export default function Home() {
 
   const [ posts, setPosts ] = useState<Array<Post>>([]);
-  const [ postId, setPostId ] = useState<String>('');
   const [ selectedPost, setSelectedPost ] = useState<Post>();
   const [ loaded, setLoaded ] = useState<Boolean>(false);
   const [ email, setEmail ] = useState<String>('');
@@ -35,8 +34,6 @@ export default function Home() {
     setLoaded(false);
     const response = await fetch('/api/b3/get', { method: 'POST' });
 
-    console.log(response)
-
     switch(response.status) {
       case 200: setPosts(await response.json()); break;
       default: console.log('error'); makeToast({ code: 500 });
@@ -49,7 +46,7 @@ export default function Home() {
     const response = await fetch('/api/b3/signup', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
+      body: JSON.stringify({ action: 'create', email })
     });
 
     switch(response.status) {
@@ -114,16 +111,16 @@ export default function Home() {
 
         {loaded && posts.length === 0 &&
           <VStack spacing={6} px={8} w='full'>
-            <Text>
-              There are no posts published yet.
-            </Text>
+            {!resgistred &&
+              <Text>
+                There are no posts published yet.
+              </Text>
+            }
 
             {/* Sign up to b3 */}
-            {/* TODO */}
             {!resgistred &&
               <HStack spacing={4} w='50%'>
                 <Input 
-                  isDisabled
                   type='text' 
                   fontSize='sm'
                   variant='outline'
@@ -131,10 +128,16 @@ export default function Home() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder='Receive an email when there is a new post?'
                 />
-                <Button variant='outline' size='sm' colorScheme='highlights' onClick={signup} isDisabled>
-                  Sign Up!
+                <Button variant='outline' size='md' colorScheme='highlights' onClick={signup}>
+                  Sign Up
                 </Button>
               </HStack>
+            }
+
+            {resgistred && 
+              <Text>
+                Thank you for signing up! Please check your email for a confirmation link.
+              </Text>
             }
           </VStack>
         }
