@@ -18,7 +18,7 @@ export default function Home() {
   const [ title, setTitle ] = useState<String>('');
 
   useEffect(() => { if(!hasAccess) onOpen(); }, []);
-  useEffect(() => { console.log(post); }, [post]);
+  // useEffect(() => { console.log(post); }, [post]);
 
   const savePost = () => {
     if(!post) return;
