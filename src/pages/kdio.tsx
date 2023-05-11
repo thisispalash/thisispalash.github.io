@@ -1,4 +1,4 @@
-import { AspectRatio, Center, Divider, HStack, Icon, Image, Link, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { AspectRatio, Center, Divider, HStack, Icon, Image, Link, Spacer, Text, Tooltip, useDisclosure, VStack } from '@chakra-ui/react';
 import { FaArrowLeft, FaLocationArrow } from 'react-icons/fa';
 import Head from '@/components/Head';
 import ContactFormModal from '@/components/ContactFormModal';
@@ -61,13 +61,13 @@ export default function Kdio() {
             <Spacer />  
             <VStack spacing={4} px={12} w='full' textAlign='justify' fontSize='lg'>
               <Text px={8}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis posuere gravida. Mauris libero nisi, blandit vitae tellus id, molestie congue nulla. Praesent semper nisl at tellus elementum efficitur. Donec quis erat purus. Donec ornare at sapien vel cursus. Nunc nec pellentesque odio. Nam neque justo, venenatis eget metus a, ornare auctor ex. Praesent et dignissim nisl.
+                khaaliDimaag is an ambitious idea that hopes to create a second brain for every human in the hope of providing the best of human technology to all of humanity. A secondary goal is to create virtual backups of the self so as to avoid (or at least delay) the <Tooltip label='refers to the idea that the first death is physical and second, when one is forgotten'>second death</Tooltip>.
               </Text>
               <Text px={8}>
-                Mauris vel leo arcu. Maecenas eleifend auctor posuere. Maecenas eget tellus et nisl dapibus facilisis vitae ut eros. Curabitur enim arcu, tempus vitae mauris eget, rutrum ultricies massa. Donec eget pulvinar justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sit amet sem placerat, fermentum turpis quis, feugiat augue. Donec eget vestibulum arcu, vel porttitor ipsum. Donec malesuada, urna eu dapibus maximus, nibh dolor tincidunt massa, non elementum quam lacus a urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet urna mauris, at scelerisque turpis lobortis porttitor.
+                khaaliDimaag is a conjunction of two hindi words - khaali and dimaag - joined together in camelCase. 'dimaag' typically refers to the brain or the mind, and is loosely interchangable between the organ and the conscious self. 'khaali' can mean 'only' or 'empty' depending on the context. 
               </Text>
               <Text px={8}>
-                Mauris vel leo arcu. Maecenas eleifend auctor posuere. Maecenas eget tellus et nisl dapibus facilisis vitae ut eros. Curabitur enim arcu, tempus vitae mauris eget, rutrum ultricies massa. Donec eget pulvinar justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sit amet sem placerat, fermentum turpis quis, feugiat augue. Donec eget vestibulum arcu, vel porttitor ipsum. Donec malesuada, urna eu dapibus maximus, nibh dolor tincidunt massa, non elementum quam lacus a urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet urna mauris, at scelerisque turpis lobortis porttitor.
+                'khaaliDimaag' thus is a play on the two words to mean 'only the brain' or 'empty brain'. It then helps to refer to the idea of only [it] being the brain so you can <Tooltip label='And experience life to the fullest!'>be an empty brain!</Tooltip>
               </Text>
             </VStack>
             <Spacer />
