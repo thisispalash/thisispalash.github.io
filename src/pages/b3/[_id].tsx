@@ -85,8 +85,11 @@ export default function Home({ post }: PostReaderProps) {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   const { _id } = context.query;
+  
+  // @dev TODO make url dependent on environment
+  const url = 'https://thisispalash.com/api/b3/get';
 
-  const query = await fetch('http://localhost:3000/api/b3/get', {
+  const query = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ _id })
