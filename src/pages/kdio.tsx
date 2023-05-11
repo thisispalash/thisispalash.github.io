@@ -64,10 +64,10 @@ export default function Kdio() {
                 khaaliDimaag is an ambitious idea that hopes to create a second brain for every human in the hope of providing the best of human technology to all of humanity. A secondary goal is to create virtual backups of the self so as to avoid (or at least delay) the <Tooltip label='refers to the idea that the first death is physical and second, when one is forgotten'>second death</Tooltip>.
               </Text>
               <Text px={8}>
-                khaaliDimaag is a conjunction of two hindi words - khaali and dimaag - joined together in camelCase. \'dimaag\' typically refers to the brain or the mind, and is loosely interchangable between the organ and the conscious self. \'khaali\' can mean \'only\' or \'empty\' depending on the context. 
+                khaaliDimaag is a conjunction of two hindi words - khaali and dimaag - joined together in camelCase. <em>dimaag</em> typically refers to the brain or the mind, and is loosely interchangable between the organ and the conscious self. <em>khaali</em> can mean <em>only</em> or <em>empty</em> depending on the context. 
               </Text>
               <Text px={8}>
-                \'khaaliDimaag\' thus is a play on the two words to mean \'only the brain\' or \'empty brain\'. It then helps to refer to the idea of only [it] being the brain so you can <Tooltip label='And experience life to the fullest!'>be an empty brain!</Tooltip>
+                <em>khaaliDimaag</em> thus is a play on the two words to mean <em>only the brain</em> or <em>empty brain</em>. It then helps to refer to the idea of only [it] being the brain so you can <Tooltip label='And experience life to the fullest!'>be an empty brain!</Tooltip>
               </Text>
             </VStack>
             <Spacer />
