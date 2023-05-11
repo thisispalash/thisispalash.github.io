@@ -6,7 +6,7 @@ export type Tag = {
 } // TODO : a Tag collection with pointers to posts
 
 export type Post = {
-  _id: mongoose.Schema.Types.ObjectId;
+  _id: mongoose.Schema.Types.ObjectId | string;
   title: string;
   blocks: OutputBlockData[];
   dateCreated: Date;
