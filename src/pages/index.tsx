@@ -21,20 +21,20 @@ export default function Home() {
         <HStack spacing={8} px={12} py={12} w='full'>
           <Spacer />
           <AspectRatio ratio={1} w='225px' h='225px'>
-            <Image src='/images/memoji.png' alt='thisispalash' onClick={contact} cursor='pointer'/>
+            <Image src='/images/memoji.png' alt='thisispalash' onClick={contact} className='cursor-message' />
           </AspectRatio>
           <VStack spacing={2} textAlign='left'>
             <Spacer />
             <Text w='full' fontSize='4xl' fontFamily='heading' fontWeight='semibold' color='highlight'>
               thisispalash [
-              <Link href='https://twitter.com/kdiodna' isExternal variant='reverse'>d</Link>
-              <Link href='https://linkedin.com/in/isthispalash' isExternal variant='reverse'>o</Link>
-              <Link href='https://twitter.com/theprimefibber' isExternal variant='reverse'>t</Link>
+              <Link href='https://twitter.com/kdiodna' isExternal variant='reverse' className='cursor-twitter'>d</Link>
+              <Link href='https://linkedin.com/in/isthispalash' isExternal variant='reverse' className='cursor-linkedin'>o</Link>
+              <Link href='https://twitter.com/theprimefibber' isExternal variant='reverse' className='cursor-twitter'>t</Link>
               ] com
             </Text>
             <Text w='full' fontSize='lg'>
               Decentralizing the world,{' '}
-              <Link href='https://github.com/thisispalash' isExternal>one Byte</Link>
+              <Link href='https://github.com/thisispalash' isExternal className='cursor-github'>one Byte</Link>
               {' '}at a time!
             </Text>
             <Spacer />
