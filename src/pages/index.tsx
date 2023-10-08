@@ -21,7 +21,7 @@ export default function Home() {
         <HStack spacing={8} px={12} py={12} w='full'>
           <Spacer />
           <AspectRatio ratio={1} w='225px' h='225px'>
-            <Image src='/images/memoji.png' alt='thisispalash' onClick={contact} className='cursor-message' />
+            <Image src='/images/balli-no-bg.png' alt='thisispalash' onClick={contact} className='cursor-message' />
           </AspectRatio>
           <VStack spacing={2} textAlign='left'>
             <Spacer />
