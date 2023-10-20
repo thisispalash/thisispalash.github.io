@@ -26,16 +26,17 @@ export default function Home() {
           <VStack spacing={2} textAlign='left'>
             <Spacer />
             <Text w='full' fontSize='4xl' fontFamily='heading' fontWeight='semibold' color='highlight'>
-              thisispalash [
+              thisispalash{' '}
+              <Link href='https://open.spotify.com/user/palash96_rox?si=ebe624cfcf7b47b9' isExternal variant='reverse' className='cursor-spotify'>[</Link>
               <Link href='https://twitter.com/kdiodna' isExternal variant='reverse' className='cursor-twitter'>d</Link>
               <Link href='https://linkedin.com/in/isthispalash' isExternal variant='reverse' className='cursor-linkedin'>o</Link>
               <Link href='https://twitter.com/theprimefibber' isExternal variant='reverse' className='cursor-twitter'>t</Link>
-              ] com
+              <Link href='https://instagram.com/isthispalash' isExternal variant='reverse' className='cursor-instagram'>]</Link>
+              {' '}com
             </Text>
             <Text w='full' fontSize='lg'>
-              Decentralizing the world,{' '}
-              <Link href='https://github.com/thisispalash' isExternal className='cursor-github'>one Byte</Link>
-              {' '}at a time!
+              <Link href='https://github.com/thisispalash' isExternal className='cursor-github'>Decentralizing</Link>
+              {' '}the world, one bit at a time!
             </Text>
             <Spacer />
           </VStack>
