@@ -72,10 +72,10 @@ export default function Home() {
           <Divider px={32} />
           <HStack spacing={8} px={12} textAlign='center'>
             <Spacer />
-            <Link href='/kdio' variant='reverse'>
+            <Link href='https://kdio.xyz' variant='reverse'>
               <Text fontFamily='heading' fontSize='lg'>khaaliDimaag [dot] io</Text>
             </Link>
-            <Text fontFamily='heading' fontSize='lg' onClick={canaryToast} variant='cilckableReverse'>
+            <Text fontFamily='heading' fontSize='lg' variant='cilckableReverse' onClick={canaryToast}>
               Bedside Blackboard
             </Text>
             <Spacer />
