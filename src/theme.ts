@@ -121,6 +121,13 @@ const components = {
           color: 'highlight',
         }
       },
+      'cilckableReverse': {
+        cursor: 'pointer',
+        color: 'highlight',
+        _hover: {
+          color: 'text',
+        }
+      },
       'heading': {
         fontFamily: 'heading',
         fontSize: '2xl',

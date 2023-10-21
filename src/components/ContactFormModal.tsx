@@ -62,7 +62,7 @@ export default function ContactFormModal({ ...props }) {
 
   useEffect(() => {
     switch(loc) {
-      case 'home': setTo('@thisispalash'); break;
+      case 'home': setTo('@isthispalash'); break;
       case 'kdio': 
         setTo('@kdio'); 
         setBgModal('bgAlternate'); 
